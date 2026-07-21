@@ -66,6 +66,14 @@ body {
 /* İçerik kısa olsa bile footer'ı büyük ekranlarda ekranın altına sabitler */
 main {
   flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sayfadaki tek bölüm (hero, hizmetler, hakkımızda vb.) mevcut alanı doldurur
+   böylece arka plan (fotoğraf/renk) footer'a kadar uzar */
+main > section {
+  flex: 1 0 auto;
 }
 
 .site-footer {
