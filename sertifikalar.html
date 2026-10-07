@@ -143,6 +143,35 @@ h1 em{font-style:normal;color:var(--gold-2)}
 .ab-yukari:focus-visible,.alt-bilgi a:focus-visible{outline:2px solid #e6c07a;outline-offset:3px}
 @media (max-width:1024px){.ab-sutunlar{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.ab-sutunlar{grid-template-columns:1fr}}
+
+/* ---------- Mobil menü ---------- */
+.menu-ac{display:none;width:46px;height:46px;border-radius:50%;border:1px solid rgba(243,239,230,.35);background:rgba(12,22,38,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);cursor:pointer;place-items:center;align-content:center;gap:5px;padding:0}
+.menu-ac span{display:block;width:18px;height:1.8px;border-radius:2px;background:#f3efe6;transition:transform .3s,opacity .2s}
+.menu-acik .menu-ac span:nth-child(1){transform:translateY(6.8px) rotate(45deg)}
+.menu-acik .menu-ac span:nth-child(2){opacity:0}
+.menu-acik .menu-ac span:nth-child(3){transform:translateY(-6.8px) rotate(-45deg)}
+.menu-ac:focus-visible{outline:2px solid #e6c07a;outline-offset:3px}
+.mobil-menu{position:fixed;inset:0;z-index:9;background:#0c1626;display:flex;flex-direction:column;justify-content:space-between;padding:120px 24px 32px;overflow-y:auto;opacity:0;transition:opacity .3s}
+.mobil-menu.acik{opacity:1}
+.mm-linkler{list-style:none;margin:0;padding:0;counter-reset:mm}
+.mm-linkler li{border-bottom:1px solid rgba(243,239,230,.1);opacity:0;transform:translateY(14px);transition:opacity .45s calc(var(--i) * 60ms + 80ms),transform .45s calc(var(--i) * 60ms + 80ms)}
+.mobil-menu.acik .mm-linkler li{opacity:1;transform:none}
+.mm-linkler a{display:flex;align-items:baseline;gap:16px;padding:16px 0;font-family:Fraunces,Georgia,serif;font-size:32px;font-weight:600;color:#f3efe6;text-decoration:none}
+.mm-linkler a::before{counter-increment:mm;content:counter(mm, decimal-leading-zero);font:600 13px Inter,sans-serif;color:#d4a85a;letter-spacing:.1em}
+.mm-linkler a[aria-current="page"]{color:#e6c07a}
+.mm-alt{display:flex;flex-direction:column;gap:10px;padding-top:28px;font-size:15px}
+.mm-alt a{color:#aeb6c3;text-decoration:none}
+.mm-alt a:first-child{color:#d4a85a;font-weight:600;font-size:18px}
+html.menu-acik,html.menu-acik body{overflow:hidden}
+html.menu-acik .kontrol,html.menu-acik .wa-sabit{visibility:hidden}
+@media (max-width:900px){
+  .menu{gap:10px}
+  .menu a:not(.teklif){display:none}
+  .menu-ac{display:grid}
+}
+@media (prefers-reduced-motion:reduce){
+  .mobil-menu,.mm-linkler li,.menu-ac span{transition:none}
+}
 </style>
 </head>
 <body>
@@ -155,8 +184,45 @@ h1 em{font-style:normal;color:var(--gold-2)}
     <a href="sertifikalar.html" aria-current="page">Sertifikalar</a>
     <a href="hakkimizda.html">Hakkımızda</a>
     <a href="iletisim.html" class="teklif">İletişim</a>
+    <button class="menu-ac" type="button" aria-expanded="false" aria-controls="mobilMenu" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
   </nav>
 </header>
+
+<div class="mobil-menu" id="mobilMenu" hidden>
+  <nav aria-label="Mobil menü"><ol class="mm-linkler"></ol></nav>
+  <div class="mm-alt">
+    <a href="tel:+905077179444">0507 717 94 44</a>
+    <a href="https://wa.me/905077179444" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="mailto:info@haydarmuhendislik.com">info@haydarmuhendislik.com</a>
+  </div>
+</div>
+<script>
+// Mobil menü: bağlantılar üstteki menüden kopyalanır, böylece tek yerden yönetilir
+(() => {
+  const dugme = document.querySelector('.menu-ac');
+  const panel = document.getElementById('mobilMenu');
+  const liste = panel.querySelector('.mm-linkler');
+  document.querySelectorAll('.menu a').forEach((a, i) => {
+    const li = document.createElement('li');
+    const kopya = a.cloneNode(true);
+    kopya.className = '';
+    li.style.setProperty('--i', i);
+    li.appendChild(kopya);
+    liste.appendChild(li);
+  });
+  const ac = acik => {
+    panel.hidden = !acik;
+    requestAnimationFrame(() => panel.classList.toggle('acik', acik));
+    document.documentElement.classList.toggle('menu-acik', acik);
+    dugme.setAttribute('aria-expanded', acik);
+    dugme.setAttribute('aria-label', acik ? 'Menüyü kapat' : 'Menüyü aç');
+  };
+  dugme.addEventListener('click', () => ac(panel.hidden));
+  panel.addEventListener('click', e => { if (e.target.closest('a')) ac(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) { ac(false); dugme.focus(); } });
+  matchMedia('(min-width: 901px)').addEventListener('change', e => { if (e.matches) ac(false); });
+})();
+</script>
 
 <main>
   <section class="bas">
