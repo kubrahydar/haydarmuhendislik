@@ -171,6 +171,7 @@ a.kanal:hover .ok{color:var(--gold)}
 .menu-ac:focus-visible{outline:2px solid #e6c07a;outline-offset:3px}
 .mobil-menu{position:fixed;inset:0;z-index:9;background:#0c1626;display:flex;flex-direction:column;justify-content:space-between;padding:120px 24px 32px;overflow-y:auto;opacity:0;transition:opacity .3s}
 .mobil-menu.acik{opacity:1}
+.mobil-menu[hidden]{display:none}
 .mm-linkler{list-style:none;margin:0;padding:0;counter-reset:mm}
 .mm-linkler li{border-bottom:1px solid rgba(243,239,230,.1);opacity:0;transform:translateY(14px);transition:opacity .45s calc(var(--i) * 60ms + 80ms),transform .45s calc(var(--i) * 60ms + 80ms)}
 .mobil-menu.acik .mm-linkler li{opacity:1;transform:none}
