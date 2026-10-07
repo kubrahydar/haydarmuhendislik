@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hizmetlerimiz | Haydar Mühendislik</title>
-<link rel="canonical" href="https://www.haydarmuhendislik.com/hizmetler.html">
+<title>Sertifikalar ve Yetkinlikler | Haydar Mühendislik</title>
+<link rel="canonical" href="https://www.haydarmuhendislik.com/sertifikalar.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0c1626">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Haydar Mühendislik">
 <meta property="og:locale" content="tr_TR">
-<meta property="og:title" content="Hizmetlerimiz | Haydar Mühendislik">
-<meta property="og:description" content="Halihazır harita ve imalat ölçümleri, termin ve restorasyon planları, orman izin haritaları, maden planlama ve 3B modelleme, dron ile hava görüntüleme, web ve yazılım geliştirme.">
-<meta property="og:url" content="https://www.haydarmuhendislik.com/hizmetler.html">
+<meta property="og:title" content="Sertifikalar ve Yetkinlikler | Haydar Mühendislik">
+<meta property="og:description" content="Haydar Mühendislik belgeleri: MAPEG Yetkilendirilmiş Tüzel Kişilik sertifikası, İHA-1 ticari pilot sertifikası ve Hacettepe Üniversitesi Geomatik Mühendisliği diploması.">
+<meta property="og:url" content="https://www.haydarmuhendislik.com/sertifikalar.html">
 <meta property="og:image" content="https://www.haydarmuhendislik.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="Halihazır harita ve imalat ölçümleri, termin ve restorasyon planları, orman izin haritaları, maden planlama ve 3B modelleme, dron ile hava görüntüleme, web ve yazılım geliştirme.">
+<meta name="description" content="Haydar Mühendislik belgeleri: MAPEG Yetkilendirilmiş Tüzel Kişilik sertifikası, İHA-1 ticari pilot sertifikası ve Hacettepe Üniversitesi Geomatik Mühendisliği diploması.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -33,6 +33,7 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
 
 /* ---------- Üst menü ---------- */
 .ust{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(16px,4vw,56px);background:rgba(12,22,38,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--cizgi)}
@@ -46,46 +47,45 @@ a{color:inherit;text-decoration:none}
 .menu .teklif:hover{background:var(--gold);color:var(--bg)}
 
 /* ---------- Sayfa başı ---------- */
-.bas{max-width:1280px;margin:0 auto;padding:clamp(56px,10vh,110px) clamp(16px,4vw,56px) clamp(32px,5vh,56px);display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
+.bas{max-width:1280px;margin:0 auto;padding:clamp(56px,10vh,110px) clamp(16px,4vw,56px) clamp(40px,6vh,64px);display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
 .ust-baslik{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin:0 0 14px}
 h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(36px,5vw,64px);line-height:1.05;margin:0}
 h1 em{font-style:normal;color:var(--gold-2)}
-.bas p.aciklama{color:var(--muted);font-size:17px;margin:0}
+.bas p{color:var(--muted);font-size:17px;margin:0}
 
-/* hızlı geçiş etiketleri */
-.etiketler{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,56px) clamp(32px,5vh,48px);display:flex;flex-wrap:wrap;gap:10px}
-.etiketler a{border:1px solid var(--cizgi);border-radius:999px;padding:8px 16px;font-size:14px;color:var(--muted);transition:border-color .2s,color .2s}
-.etiketler a:hover{border-color:var(--gold);color:var(--text)}
+/* ---------- Belgeler ---------- */
+.belgeler{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,56px) clamp(72px,12vh,120px);display:flex;flex-direction:column;gap:clamp(28px,5vh,48px)}
+.belge{scroll-margin-top:100px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,64px);align-items:center;background:var(--kart);border:1px solid rgba(255,255,255,.05);border-radius:22px;padding:clamp(20px,3vw,40px);
+  opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.belge.gorundu{opacity:1;transform:none}
+.belge:nth-child(even) .kagit-alan{order:2}
 
-/* ---------- Hizmet kartları ---------- */
-.izgara{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,56px) clamp(72px,12vh,120px);display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.hizmet{background:var(--kart);border:1px solid rgba(255,255,255,.05);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;scroll-margin-top:100px;
-  opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1),border-color .3s}
-.hizmet.gorundu{opacity:1;transform:none}
-.hizmet:hover,.hizmet:target{border-color:rgba(212,168,90,.45)}
-.foto{position:relative;aspect-ratio:16/10;overflow:hidden;margin:0}
-.foto img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
-.hizmet:hover .foto img{transform:scale(1.06)}
-.foto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(19,33,58,.85) 0%,rgba(19,33,58,0) 45%);pointer-events:none}
-.no{position:absolute;left:18px;bottom:12px;z-index:1;font-family:Fraunces,Georgia,serif;font-size:42px;font-weight:600;color:var(--gold);line-height:1;opacity:.95}
-.govde{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
-.govde h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:22px;line-height:1.2;margin:0 0 10px}
-.govde p{color:var(--muted);font-size:15px;margin:0 0 18px}
-.ciktilar{list-style:none;margin:auto 0 0;padding:14px 0 0;border-top:1px solid var(--cizgi);display:flex;flex-wrap:wrap;gap:6px}
-.ciktilar li{font-size:12.5px;font-weight:500;background:rgba(212,168,90,.1);color:var(--gold-2);border-radius:999px;padding:4px 11px}
+/* belge görseli: kâğıt gibi, hafif eğik; üstüne gelince düzelir */
+.kagit-alan{display:grid;place-items:center;min-height:300px;background:radial-gradient(ellipse at center,rgba(212,168,90,.12),transparent 70%);border-radius:16px;padding:clamp(16px,3vw,36px)}
+.kagit{border:0;padding:0;background:none;cursor:zoom-in;display:block;width:100%;max-width:520px;transform:rotate(-2deg);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.belge:nth-child(even) .kagit{transform:rotate(2deg)}
+.kagit.dikey{max-width:300px}
+.kagit img{width:100%;height:auto;display:block;border-radius:4px;box-shadow:0 2px 4px rgba(0,0,0,.2),0 24px 60px rgba(0,0,0,.5)}
+.belge:hover .kagit,.kagit:focus-visible{transform:rotate(0) scale(1.03)}
+.kagit:focus-visible{outline:2px solid var(--gold);outline-offset:6px}
+.buyut{display:block;margin-top:14px;font-size:13px;color:var(--muted);text-align:center}
 
-/* restorasyon: önce / sonra sürgüsü */
-.karsilastir{cursor:ew-resize;touch-action:pan-y}
-.karsilastir img{position:absolute;inset:0}
-.karsilastir .sonra{clip-path:inset(0 0 0 var(--k,50%))}
-.hizmet:hover .karsilastir img{transform:none}
-.surgu{position:absolute;top:0;bottom:0;left:var(--k,50%);width:2px;background:var(--gold);z-index:2;transform:translateX(-1px);pointer-events:none}
-.surgu::after{content:"";position:absolute;top:50%;left:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:var(--gold);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230c1626' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-5 6 5 6M15 6l5 6-5 6'/%3E%3C/svg%3E");background-size:20px;background-position:center;background-repeat:no-repeat;box-shadow:0 4px 14px rgba(0,0,0,.4)}
-.etiket-once,.etiket-sonra{position:absolute;top:12px;z-index:2;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:rgba(12,22,38,.7);padding:4px 10px;border-radius:999px;pointer-events:none}
-.etiket-once{left:12px}.etiket-sonra{right:12px}
-.karsilastir input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:3;margin:0}
-.karsilastir input:focus-visible+.surgu{outline:2px solid var(--text);outline-offset:2px}
+.veren{color:var(--muted);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px}
+.belge h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(26px,2.6vw,34px);line-height:1.15;margin:0 0 12px}
+.belge h2 em{font-style:normal;color:var(--gold-2)}
+.belge p.ne{color:var(--muted);margin:0 0 22px}
+.bilgiler{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 20px}
+.bilgiler div{background:rgba(12,22,38,.55);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:12px 14px}
+.bilgiler dt{font-size:12px;color:var(--muted);margin:0 0 2px}
+.bilgiler dd{margin:0;font-weight:600;font-size:15px}
+.dogrula{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);border-top:1px solid var(--cizgi);padding-top:16px;margin:0}
+.dogrula svg{flex:0 0 18px;height:18px;color:var(--gold);margin-top:2px}
+
+/* ---------- Büyük görüntüleme ---------- */
+.perde{position:fixed;inset:0;z-index:50;background:rgba(6,11,20,.92);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.perde.acik{display:flex}
+.perde img{max-width:min(1100px,100%);max-height:calc(100svh - 48px);border-radius:4px;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+.kapat{position:fixed;top:18px;right:18px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(243,239,230,.35);background:rgba(12,22,38,.6);cursor:pointer;font-size:22px;line-height:1}
 
 /* ---------- Teklif bandı ---------- */
 .teklif-bant{background:var(--bg-2);border-top:1px solid var(--cizgi)}
@@ -96,20 +96,19 @@ h1 em{font-style:normal;color:var(--gold-2)}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px;background:var(--gold);color:var(--bg);transition:transform .2s,background .2s}
 .btn:hover{transform:translateY(-2px);background:var(--gold-2)}
 
-@media (max-width:1024px){
-  .izgara{grid-template-columns:repeat(2,1fr)}
-}
-@media (max-width:820px){
+@media (max-width:900px){
   .menu a:not(.teklif){display:none}
   .bas{grid-template-columns:1fr;gap:16px}
-  .izgara{grid-template-columns:1fr}
-  .etiketler{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
-  .etiketler::-webkit-scrollbar{display:none}
-  .etiketler a{white-space:nowrap}
+  .belge{grid-template-columns:1fr}
+  .belge:nth-child(even) .kagit-alan{order:0}
+  .kagit-alan{min-height:0}
+}
+@media (max-width:480px){
+  .bilgiler{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
-  .hizmet{opacity:1;transform:none;transition:none}
-  .foto img{transition:none}
+  .belge{opacity:1;transform:none;transition:none}
+  .kagit{transition:none}
 }
 
 /* ---------- Alt bilgi (footer) ---------- */
@@ -148,9 +147,9 @@ h1 em{font-style:normal;color:var(--gold-2)}
 <header class="ust">
   <a href="index.html" class="logo">HAYDAR<span>MÜHENDİSLİK</span></a>
   <nav class="menu" aria-label="Ana menü">
-    <a href="hizmetler.html" aria-current="page">Hizmetler</a>
+    <a href="hizmetler.html">Hizmetler</a>
     <a href="index.html#ekipman">Ekipman</a>
-    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="sertifikalar.html" aria-current="page">Sertifikalar</a>
     <a href="hakkimizda.html">Hakkımızda</a>
     <a href="iletisim.html" class="teklif">İletişim</a>
   </nav>
@@ -159,80 +158,94 @@ h1 em{font-style:normal;color:var(--gold-2)}
 <main>
   <section class="bas">
     <div>
-      <p class="ust-baslik">Neler yapıyoruz</p>
-      <h1>Ölçümden teslime, <em>tek elden</em> mühendislik.</h1>
+      <p class="ust-baslik">Sertifikalar ve Yetkinlikler</p>
+      <h1>Belgeli uzmanlık, <em>doğrulanabilir</em> güven.</h1>
     </div>
-    <p class="aciklama">Harita mühendisliği, maden planlama ve dron teknolojisini bir araya getiriyor; sahadaki ilk ölçümden resmi kurumlara teslim edilen dosyaya kadar tüm süreci yönetiyoruz.</p>
+    <p>Çalışmalarımızı resmi kurumlardan aldığımız eğitim ve yetki belgeleriyle yürütüyoruz. Tüm belgelerimiz e-Devlet veya düzenleyen kurum üzerinden doğrulanabilir.</p>
   </section>
 
-  <nav class="etiketler" aria-label="Hizmetlere hızlı geçiş">
-    <a href="#halihazir">Halihazır Harita</a>
-    <a href="#restorasyon">Termin ve Restorasyon</a>
-    <a href="#orman">Orman İzin</a>
-    <a href="#maden">Maden Planlama</a>
-    <a href="#dron">Dron</a>
-    <a href="#yazilim">Yazılım</a>
-  </nav>
-
-  <div class="izgara">
-    <article class="hizmet" id="halihazir">
-      <figure class="foto"><img src="assets/hizmet-halihazir.jpg" alt="Yamaçta GNSS alıcısı ve turuncu bayraklı aplikasyon kazıkları" loading="lazy"><span class="no">01</span></figure>
-      <div class="govde">
-        <h2>Halihazır Harita ve İmalat Ölçümleri</h2>
-        <p>Halihazır harita, imalat ve aplikasyon çalışmalarını GNSS/RTK ve klasik ölçme teknikleriyle santimetre hassasiyetinde yürütüyoruz.</p>
-        <ul class="ciktilar"><li>Halihazır harita</li><li>Aplikasyon</li><li>İmalat ölçümü</li><li>Kesit ve kroki</li></ul>
+  <div class="belgeler">
+    <!-- MAPEG YTK -->
+    <article class="belge">
+      <div class="kagit-alan">
+        <button class="kagit" type="button" data-buyuk="assets/belge-mapeg-ytk.jpg" aria-label="MAPEG YTK sertifikasını büyüt">
+          <img src="assets/belge-mapeg-ytk-kucuk.jpg" alt="MAPEG Yetkilendirilmiş Tüzel Kişilik Sertifikası" width="640" height="452" loading="lazy">
+        </button>
+      </div>
+      <div>
+        <p class="veren">Maden ve Petrol İşleri Genel Müdürlüğü</p>
+        <h2>Yetkilendirilmiş Tüzel Kişilik <em>(YTK)</em> Sertifikası</h2>
+        <p class="ne">MAPEG'in Yetkilendirilmiş Tüzel Kişiler Yönetmeliği kapsamında düzenlediği eğitim programı başarıyla tamamlandı. Maden projelerinizi mevzuata hâkim bir ekiple yürütüyoruz.</p>
+        <dl class="bilgiler">
+          <div><dt>Eğitim tarihi</dt><dd>06–10.08.2026</dd></div>
+          <div><dt>Geçerlilik</dt><dd>10.08.2031'e kadar</dd></div>
+          <div><dt>Meslek</dt><dd>Geomatik Mühendisi</dd></div>
+          <div><dt>Belge sahibi</dt><dd>Hatice Kübra Haydar</dd></div>
+        </dl>
+        <p class="dogrula"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>e-İmzalıdır. turkiye.gov.tr MAPEG EBYS üzerinden belge doğrulama koduyla doğrulanabilir.</p>
       </div>
     </article>
 
-    <article class="hizmet" id="restorasyon">
-      <figure class="foto karsilastir">
-        <img src="assets/restorasyon-once.jpg" alt="Restorasyon öncesi: açık ocak basamakları" loading="lazy">
-        <img class="sonra" src="assets/restorasyon-sonra.jpg" alt="Restorasyon sonrası: ağaçlandırılmış yamaçlar" loading="lazy">
-        <span class="etiket-once">Önce</span><span class="etiket-sonra">Sonra</span>
-        <input type="range" min="0" max="100" value="50" aria-label="Restorasyon öncesi ve sonrası karşılaştırma">
-        <span class="surgu" aria-hidden="true"></span>
-        <span class="no">02</span>
-      </figure>
-      <div class="govde">
-        <h2>Termin ve Restorasyon Planları</h2>
-        <p>İşletme termin planları ile maden sahalarının çevresel restorasyon ve rehabilitasyon projelerini mevzuata uygun şekilde hazırlıyoruz.</p>
-        <ul class="ciktilar"><li>Termin planı</li><li>Rehabilitasyon projesi</li><li>Arazi düzenleme</li></ul>
+    <!-- İHA-1 -->
+    <article class="belge">
+      <div class="kagit-alan">
+        <button class="kagit dikey" type="button" data-buyuk="assets/belge-iha1.jpg" aria-label="İHA-1 ticari pilot sertifikasını büyüt">
+          <img src="assets/belge-iha1-kucuk.jpg" alt="İnsansız Hava Aracı Ticari Pilot Başarı Sertifikası" width="640" height="904" loading="lazy">
+        </button>
+      </div>
+      <div>
+        <p class="veren"><span lang="en">Skyview</span> Havacılık · SHGM yetkili eğitim kuruluşu</p>
+        <h2>İHA-1 <em>Ticari Pilot</em> Sertifikası</h2>
+        <p class="ne">SHT-İHA Talimatnamesi'ne göre düzenlenen İHA-1 Ticari Pilot Eğitimi tamamlandı. Matrice 4E dahil 25 kg'a kadar insansız hava araçlarıyla ticari haritalama ve görüntüleme uçuşları yapıyoruz.</p>
+        <dl class="bilgiler">
+          <div><dt>Sınıf</dt><dd>İHA-1 (0–25 kg)</dd></div>
+          <div><dt>Eğitim tarihi</dt><dd>12.06.2026</dd></div>
+          <div><dt>Sertifika no</dt><dd>260612-İHA1-2127</dd></div>
+          <div><dt>Belge sahibi</dt><dd>Hatice Kübra Haydar</dd></div>
+        </dl>
+        <p class="dogrula"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Belgedeki karekod veya skyview.com.tr üzerinden sorgulanabilir.</p>
       </div>
     </article>
 
-    <article class="hizmet" id="orman">
-      <figure class="foto"><img src="assets/hizmet-orman.jpg" alt="Orman içinde altın çizgiyle işaretlenmiş izin parseli" loading="lazy"><span class="no">03</span></figure>
-      <div class="govde">
-        <h2>Orman İzin Haritası ve Aplikasyonları</h2>
-        <p>Orman izin başvuruları için gereken harita ve koordinat dosyalarını hazırlıyor, izin alanının sahaya aplikasyonunu uçtan uca yönetiyoruz.</p>
-        <ul class="ciktilar"><li>İzin haritası</li><li>Koordinat listesi</li><li>Saha aplikasyonu</li></ul>
+    <!-- İHA-1: Hüseyin Haydar -->
+    <article class="belge" id="iha-huseyin">
+      <div class="kagit-alan">
+        <button class="kagit dikey" type="button" data-buyuk="assets/belge-iha1-huseyin.jpg" aria-label="Hüseyin Haydar İHA-1 ticari pilot sertifikasını büyüt">
+          <img src="assets/belge-iha1-huseyin-kucuk.jpg" alt="Hüseyin Haydar İnsansız Hava Aracı Ticari Pilot Başarı Sertifikası" width="640" height="904" loading="lazy">
+        </button>
+      </div>
+      <div>
+        <p class="veren"><span lang="en">Skyview</span> Havacılık · SHGM yetkili eğitim kuruluşu</p>
+        <h2>İHA-1 <em>Ticari Pilot</em> Sertifikası</h2>
+        <p class="ne">SHT-İHA Talimatnamesi'ne göre düzenlenen İHA-1 Ticari Pilot Eğitimi tamamlandı. Kurucularımızın ikisi de ticari İHA pilotudur; tüm dron operasyonlarımızı sertifikalı pilotlarla yürütüyoruz.</p>
+        <dl class="bilgiler">
+          <div><dt>Sınıf</dt><dd>İHA-1 (0–25 kg)</dd></div>
+          <div><dt>Eğitim tarihi</dt><dd>12.06.2026</dd></div>
+          <div><dt>Sertifika no</dt><dd>260612-İHA1-2129</dd></div>
+          <div><dt>Belge sahibi</dt><dd>Hüseyin Haydar</dd></div>
+        </dl>
+        <p class="dogrula"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Belgedeki karekod veya skyview.com.tr üzerinden sorgulanabilir.</p>
       </div>
     </article>
 
-    <article class="hizmet" id="maden">
-      <figure class="foto"><img src="assets/hizmet-maden.jpg" alt="Açık ocak üzerinde planlanan kazının 3B tel kafes modeli" loading="lazy"><span class="no">04</span></figure>
-      <div class="govde">
-        <h2>Maden Planlama ve 3B Modelleme</h2>
-        <p>Üç boyutlu açık ocak tasarımı ve sondaj modellemesi; dekapaj, kazı, dolgu ve rezerv hesaplarıyla saha planlamanızı sayısallaştırıyoruz.</p>
-        <ul class="ciktilar"><li>Açık ocak tasarımı</li><li>Sondaj modeli</li><li>Hacim hesabı</li><li>Rezerv</li></ul>
+    <!-- Diploma -->
+    <article class="belge">
+      <div class="kagit-alan">
+        <button class="kagit" type="button" data-buyuk="assets/belge-diploma.jpg" aria-label="Lisans diplomasını büyüt">
+          <img src="assets/belge-diploma-kucuk.jpg" alt="Hacettepe Üniversitesi Geomatik Mühendisliği lisans diploması" width="640" height="522" loading="lazy">
+        </button>
       </div>
-    </article>
-
-    <article class="hizmet" id="dron">
-      <figure class="foto"><img src="assets/hizmet-dron.jpg" alt="Tarım arazisi üzerinde dron uçuş hatları ve çekim noktaları" loading="lazy"><span class="no">05</span></figure>
-      <div class="govde">
-        <h2>Dron (İHA) ile Hava Görüntüleme</h2>
-        <p>RTK destekli dronlarla kontrol noktasız hassas haritalama yapıyor; arazi ve gayrimenkul projeleri için profesyonel hava çekimi sunuyoruz.</p>
-        <ul class="ciktilar"><li>Ortofoto</li><li>Yüzey modeli</li><li>Nokta bulutu</li><li>Tanıtım çekimi</li></ul>
-      </div>
-    </article>
-
-    <article class="hizmet" id="yazilim">
-      <figure class="foto"><img src="assets/hizmet-yazilim.jpg" alt="Dizüstü ekranında 3B arazi modeli ve masada GNSS alıcısı" loading="lazy"><span class="no">06</span></figure>
-      <div class="govde">
-        <h2>Web Tasarımı ve Yazılım Geliştirme</h2>
-        <p>Kurumsal web sitelerinden mühendislik hesap araçlarına ve CBS uygulamalarına kadar, işinize özel yazılım çözümleri geliştiriyoruz.</p>
-        <ul class="ciktilar"><li>Kurumsal web</li><li>CBS uygulaması</li><li>Hesap araçları</li></ul>
+      <div>
+        <p class="veren">Hacettepe Üniversitesi · Mühendislik Fakültesi</p>
+        <h2>Geomatik Mühendisliği <em>Lisans</em> Diploması</h2>
+        <p class="ne">Hacettepe Üniversitesi Geomatik Mühendisliği Bölümü'nden (İngilizce) Geomatik Mühendisi unvanıyla mezuniyet. Ölçme, fotogrametri, uzaktan algılama ve CBS alanlarında akademik temel.</p>
+        <dl class="bilgiler">
+          <div><dt>Unvan</dt><dd>Geomatik Mühendisi</dd></div>
+          <div><dt>Derece</dt><dd>Lisans (B.Sc.)</dd></div>
+          <div><dt>Eğitim dili</dt><dd>İngilizce</dd></div>
+          <div><dt>Belge sahibi</dt><dd>Hatice Kübra Haydar</dd></div>
+        </dl>
+        <p class="dogrula"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Güvenli elektronik imzalıdır. turkiye.gov.tr Hacettepe EBYS üzerinden doğrulanabilir.</p>
       </div>
     </article>
   </div>
@@ -282,18 +295,31 @@ document.querySelector('.ab-yukari').addEventListener('click', e => {
 });
 </script>
 
-<script>
-// Kartlar ekrana girince sırayla belirsin
-const kartIO = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) { e.target.classList.add('gorundu'); kartIO.unobserve(e.target); }
-}), { threshold: 0.15 });
-document.querySelectorAll('.hizmet').forEach((k, i) => { k.style.transitionDelay = (i % 3) * 0.1 + 's'; kartIO.observe(k); });
+<div class="perde" id="perde" role="dialog" aria-modal="true" aria-label="Belge görüntüleme">
+  <button class="kapat" type="button" aria-label="Kapat">×</button>
+  <img alt="">
+</div>
 
-// Önce / sonra sürgüsü
-document.querySelectorAll('.karsilastir').forEach(f => {
-  const girdi = f.querySelector('input');
-  girdi.addEventListener('input', () => f.style.setProperty('--k', girdi.value + '%'));
-});
+<script>
+// Belgeler ekrana girince belirsin
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('gorundu'); io.unobserve(e.target); }
+}), { threshold: 0.15 });
+document.querySelectorAll('.belge').forEach(b => io.observe(b));
+
+// Belgeyi büyük göster
+const perde = document.getElementById('perde'), buyukImg = perde.querySelector('img');
+let sonOdak;
+document.querySelectorAll('.kagit').forEach(k => k.addEventListener('click', () => {
+  sonOdak = k;
+  buyukImg.src = k.dataset.buyuk;
+  buyukImg.alt = k.querySelector('img').alt;
+  perde.classList.add('acik');
+  perde.querySelector('.kapat').focus();
+}));
+const kapat = () => { perde.classList.remove('acik'); sonOdak && sonOdak.focus(); };
+perde.addEventListener('click', kapat);
+addEventListener('keydown', e => { if (e.key === 'Escape' && perde.classList.contains('acik')) kapat(); });
 </script>
 </body>
 </html>

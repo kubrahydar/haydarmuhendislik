@@ -1,196 +1,401 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>İletişim | Haydar Mühendislik</title>
-  <meta name="description" content="Haydar Mühendislik ile iletişime geçin - telefon, e-posta, adres bilgileri ve konum haritası." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İletişim ve Teklif | Haydar Mühendislik</title>
+<link rel="canonical" href="https://www.haydarmuhendislik.com/iletisim.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0c1626">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Haydar Mühendislik">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="İletişim ve Teklif | Haydar Mühendislik">
+<meta property="og:description" content="Haydar Mühendislik ile iletişime geçin: telefon, WhatsApp, e-posta ve teklif formu. Güneşevler Mahallesi, Altındağ / Ankara.">
+<meta property="og:url" content="https://www.haydarmuhendislik.com/iletisim.html">
+<meta property="og:image" content="https://www.haydarmuhendislik.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Haydar Mühendislik ile iletişime geçin: telefon, WhatsApp, e-posta ve teklif formu. Güneşevler Mahallesi, Altındağ / Ankara.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c1626;
+  --bg-2:#0a1220;
+  --kart:#13213a;
+  --alan:#0f1b30;
+  --gold:#d4a85a;
+  --gold-2:#e6c07a;
+  --text:#f3efe6;
+  --muted:#aeb6c3;
+  --cizgi:rgba(243,239,230,.12);
+  --hata:#ff7a6e;
+  --basari:#7fd1a0;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
 
-  <!-- Sosyal medya paylaşım kartı (Open Graph / Twitter) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Haydar Mühendislik" />
-  <meta property="og:title" content="İletişim | Haydar Mühendislik" />
-  <meta property="og:description" content="Telefon, e-posta, adres bilgileri ve konum haritası." />
-  <meta property="og:url" content="https://www.haydarmuhendislik.com/iletisim.html" />
-  <meta property="og:image" content="https://www.haydarmuhendislik.com/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="İletişim | Haydar Mühendislik" />
-  <meta name="twitter:description" content="Telefon, e-posta, adres bilgileri ve konum haritası." />
-  <meta name="twitter:image" content="https://www.haydarmuhendislik.com/og-image.jpg" />
+/* ---------- Üst menü ---------- */
+.ust{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(16px,4vw,56px);background:rgba(12,22,38,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--cizgi)}
+.logo{font-family:Fraunces,Georgia,serif;font-size:22px;font-weight:600;letter-spacing:.04em;line-height:1.1}
+.logo span{display:block;font:500 10px/1 Inter,sans-serif;letter-spacing:.32em;color:var(--gold);margin-top:4px}
+.menu{display:flex;align-items:center;gap:34px;font-size:15px;font-weight:500}
+.menu a{opacity:.8;transition:opacity .2s}
+.menu a:hover{opacity:1}
+.menu .teklif{border:1px solid var(--gold);color:var(--gold);padding:8px 18px;border-radius:999px;opacity:1;transition:background .2s,color .2s}
+.menu .teklif:hover,.menu .teklif[aria-current="page"]{background:var(--gold);color:var(--bg)}
 
-  <!-- Sayfa ikonu (favicon) - basit bir SVG ikon, harici dosya gerektirmez -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%231F4B43'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%23F3EFE6' font-family='Georgia, serif'%3EH%3C/text%3E%3C/svg%3E" />
+/* ---------- Sayfa başı ---------- */
+.bas{max-width:1280px;margin:0 auto;padding:clamp(56px,10vh,110px) clamp(16px,4vw,56px) clamp(36px,6vh,56px)}
+.ust-baslik{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin:0 0 14px}
+h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(36px,5vw,64px);line-height:1.05;margin:0 0 16px;max-width:16ch}
+h1 em{font-style:normal;color:var(--gold-2)}
+.bas p{color:var(--muted);font-size:17px;margin:0;max-width:560px}
 
-  <!-- Stil dosyası (göreli yol) -->
-  <link rel="stylesheet" href="styles.css" />
+/* ---------- İki sütun ---------- */
+.duzen{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,56px) clamp(48px,8vh,80px);display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,3vw,40px);align-items:start}
 
-  <!-- Arama motorları için yapılandırılmış işletme verisi (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Haydar Mühendislik",
-    "image": "https://www.haydarmuhendislik.com/og-image.jpg",
-    "url": "https://www.haydarmuhendislik.com/",
-    "telephone": "+905077179444",
-    "email": "info@haydarmuhendislik.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Güneşevler Mahallesi, Doruk Sokak",
-      "addressLocality": "Altındağ",
-      "addressRegion": "Ankara",
-      "addressCountry": "TR"
-    },
-    "sameAs": ["https://www.instagram.com/haydarmuhendislik"],
-    "description": "Harita mühendisliği, maden planlama ve 3B modelleme, dron çekimi ve yazılım geliştirme hizmetleri sunan mühendislik firması."
-  }
-  </script>
+/* iletişim kanalları */
+.kanallar{display:flex;flex-direction:column;gap:12px}
+.kanal{display:flex;gap:16px;align-items:center;background:var(--kart);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:18px 20px;transition:border-color .25s,transform .25s}
+a.kanal:hover{border-color:rgba(212,168,90,.5);transform:translateX(4px)}
+.ikon{flex:0 0 46px;height:46px;border-radius:12px;background:rgba(212,168,90,.12);color:var(--gold);display:grid;place-items:center}
+.ikon svg{width:22px;height:22px}
+.kanal.whatsapp .ikon{background:rgba(37,211,102,.14);color:#3ddc84}
+.kanal small{display:block;color:var(--muted);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+.kanal strong{display:block;font-weight:600;font-size:16.5px;line-height:1.35;overflow-wrap:anywhere}
+.kanal>span:nth-child(2){min-width:0}
+.kanal .ok{margin-left:auto;color:var(--muted);transition:color .2s}
+a.kanal:hover .ok{color:var(--gold)}
+.sosyal{display:flex;gap:10px;margin-top:6px}
+.sosyal a{width:44px;height:44px;border-radius:12px;border:1px solid var(--cizgi);display:grid;place-items:center;transition:border-color .2s,color .2s}
+.sosyal a:hover{border-color:var(--gold);color:var(--gold)}
+.sosyal svg{width:19px;height:19px}
+
+/* ---------- Form ---------- */
+.form-kart{background:var(--kart);border:1px solid rgba(255,255,255,.05);border-radius:22px;padding:clamp(22px,3vw,36px);scroll-margin-top:100px}
+.form-kart h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(24px,2.4vw,30px);margin:0 0 6px}
+.form-kart>p{color:var(--muted);margin:0 0 22px;font-size:15px}
+.satir{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.alan{margin-bottom:14px}
+.alan label{display:block;font-size:13.5px;font-weight:500;margin-bottom:6px}
+.alan label span{color:var(--muted);font-weight:400}
+.alan input,.alan select,.alan textarea{width:100%;background:var(--alan);border:1px solid rgba(243,239,230,.14);border-radius:12px;padding:12px 14px;font-size:15px;transition:border-color .2s,box-shadow .2s}
+.alan textarea{resize:vertical;min-height:130px}
+.alan select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4a85a' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px;padding-right:40px}
+.alan select option{background:var(--kart)}
+.alan input::placeholder,.alan textarea::placeholder{color:#6f7b8f}
+.alan input:focus,.alan select:focus,.alan textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,168,90,.18)}
+.alan input:user-invalid,.alan textarea:user-invalid{border-color:var(--hata)}
+.onay{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);margin:4px 0 20px}
+.onay input{flex:0 0 18px;width:18px;height:18px;margin:2px 0 0;accent-color:var(--gold)}
+.onay button{background:none;border:0;padding:0;color:var(--gold-2);text-decoration:underline;cursor:pointer;font-size:inherit}
+.gonder{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px 28px;border:0;border-radius:999px;font-weight:600;font-size:15.5px;background:var(--gold);color:var(--bg);cursor:pointer;transition:transform .2s,background .2s,opacity .2s}
+.gonder:hover{background:var(--gold-2);transform:translateY(-2px)}
+.gonder:disabled{opacity:.6;cursor:progress;transform:none}
+.durum{margin:14px 0 0;font-size:14.5px;min-height:1.6em}
+.durum.basari{color:var(--basari)}
+.durum.hata{color:var(--hata)}
+.gizli{position:absolute;left:-9999px}
+
+/* ---------- Harita ---------- */
+.harita{max-width:1280px;margin:0 auto clamp(72px,12vh,120px);padding:0 clamp(16px,4vw,56px)}
+.harita-ic{position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.06);height:clamp(320px,38vw,480px)}
+.harita iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yol-tarifi{position:absolute;left:18px;bottom:18px;display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--bg);font-weight:600;font-size:14px;padding:11px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+
+/* ---------- KVKK penceresi ---------- */
+.perde{position:fixed;inset:0;z-index:50;background:rgba(6,11,20,.88);display:none;align-items:center;justify-content:center;padding:20px}
+.perde.acik{display:flex}
+.kvkk{background:var(--kart);border:1px solid var(--cizgi);border-radius:18px;max-width:640px;max-height:calc(100svh - 40px);overflow:auto;padding:28px;position:relative}
+.kvkk h3{font-family:Fraunces,Georgia,serif;font-size:22px;margin:0 0 12px}
+.kvkk p,.kvkk li{color:var(--muted);font-size:14.5px}
+.kvkk .kapat{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--cizgi);background:none;cursor:pointer;font-size:20px}
+
+/* ---------- Sabit WhatsApp düğmesi ---------- */
+.wa-sabit{position:fixed;right:20px;bottom:96px;z-index:20;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform .2s}
+.wa-sabit:hover{transform:scale(1.08)}
+.wa-sabit svg{width:28px;height:28px}
+
+@media (max-width:900px){
+  .menu a:not(.teklif){display:none}
+  .duzen{grid-template-columns:1fr}
+  .form-kart{order:-1}
+}
+@media (max-width:520px){
+  .satir{grid-template-columns:1fr;gap:0}
+}
+
+/* ---------- Alt bilgi (footer) ---------- */
+.alt-bilgi{background:#08101d;border-top:1px solid rgba(243,239,230,.1);color:#d9dde4}
+.ab-ic{max-width:1280px;margin:0 auto;padding-inline:clamp(16px,4vw,56px)}
+.ab-sutunlar{display:grid;grid-template-columns:1.2fr .9fr 1.05fr 1.45fr;gap:clamp(28px,4vw,56px);padding-block:clamp(56px,9vh,88px) clamp(40px,6vh,64px)}
+.ab-marka .logo{display:inline-block;font-family:Fraunces,Georgia,serif;font-size:26px;font-weight:600;letter-spacing:.04em;line-height:1.1;color:#f3efe6}
+.ab-marka .logo span{display:block;font:500 11px/1 Inter,sans-serif;letter-spacing:.32em;color:#d4a85a;margin-top:5px}
+.ab-marka p{color:#aeb6c3;font-size:15px;line-height:1.7;margin:22px 0 24px;max-width:34ch}
+.ab-sosyal{display:flex;gap:10px}
+.ab-sosyal a{width:42px;height:42px;border-radius:50%;background:rgba(243,239,230,.08);display:grid;place-items:center;color:#f3efe6;transition:background .2s,color .2s,transform .2s}
+.ab-sosyal a:hover{background:#d4a85a;color:#0c1626;transform:translateY(-2px)}
+.ab-sosyal svg{width:18px;height:18px}
+.alt-bilgi h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:22px;line-height:1.2;color:#f3efe6;margin:6px 0 22px}
+.alt-bilgi nav ul,.ab-iletisim{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.alt-bilgi nav a{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:#d9dde4;transition:color .2s,transform .2s}
+.alt-bilgi nav a svg{width:14px;height:14px;color:#d4a85a;flex:0 0 14px}
+.alt-bilgi nav a:hover{color:#e6c07a;transform:translateX(3px)}
+.ab-iletisim li{display:flex;gap:14px;align-items:flex-start;font-size:15px;line-height:1.55}
+.ab-iletisim a:hover{color:#e6c07a}
+.ab-ikon{flex:0 0 40px;height:40px;border-radius:50%;background:rgba(243,239,230,.08);display:grid;place-items:center;color:#d4a85a;margin-top:-6px}
+.ab-ikon svg{width:18px;height:18px}
+.ab-iletisim li>a,.ab-iletisim li>span:last-child{min-width:0;overflow-wrap:break-word;padding-top:3px}
+.ab-alt{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid rgba(243,239,230,.1);padding-block:22px}
+.ab-alt p{margin:0;font-size:14px;color:#aeb6c3}
+.ab-yukari{flex:0 0 46px;width:46px;height:46px;border-radius:50%;background:#d4a85a;color:#0c1626;display:grid;place-items:center;box-shadow:0 0 0 5px rgba(212,168,90,.18);transition:transform .2s,background .2s}
+.ab-yukari:hover{transform:translateY(-3px);background:#e6c07a}
+.ab-yukari svg{width:20px;height:20px}
+.ab-yukari:focus-visible,.alt-bilgi a:focus-visible{outline:2px solid #e6c07a;outline-offset:3px}
+@media (max-width:1024px){.ab-sutunlar{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.ab-sutunlar{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
-  <!-- ============ HEADER ============ -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <img src="logo-header.png" alt="Haydar Mühendislik" class="logo-image" />
+<header class="ust">
+  <a href="index.html" class="logo">HAYDAR<span>MÜHENDİSLİK</span></a>
+  <nav class="menu" aria-label="Ana menü">
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="index.html#ekipman">Ekipman</a>
+    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="iletisim.html" class="teklif" aria-current="page">İletişim</a>
+  </nav>
+</header>
+
+<main>
+  <section class="bas">
+    <p class="ust-baslik">İletişim ve Teklif</p>
+    <h1>Projenizi konuşalım, <em>sahaya</em> çıkalım.</h1>
+    <p>Formu doldurun ya da doğrudan arayın. Size en geç bir iş günü içinde dönüş yapıyoruz.</p>
+  </section>
+
+  <div class="duzen">
+    <!-- İletişim kanalları -->
+    <div class="kanallar">
+      <a class="kanal" href="tel:+905077179444">
+        <span class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+        <span><small>Telefon</small><strong>0507 717 94 44</strong></span>
+        <span class="ok" aria-hidden="true">→</span>
       </a>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="main-nav" id="mainNav">
-        <ul>
-          <li><a href="index.html">Anasayfa</a></li>
-          <li><a href="hizmetler.html">Hizmetler</a></li>
-          <li><a href="hakkimizda.html">Hakkımızda</a></li>
-          <li><a href="iletisim.html" class="active" aria-current="page">İletişim</a></li>
-        </ul>
-      </nav>
+      <a class="kanal whatsapp" href="https://wa.me/905077179444?text=Merhaba%2C%20web%20siteniz%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener">
+        <span class="ikon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.8L0 24l6.3-1.7A11.8 11.8 0 0 0 24 12c0-3.1-1.2-6.1-3.5-8.4z"/></svg></span>
+        <span><small>WhatsApp</small><strong>Hemen yazın</strong></span>
+        <span class="ok" aria-hidden="true">→</span>
+      </a>
+      <a class="kanal" href="mailto:info@haydarmuhendislik.com">
+        <span class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span>
+        <span><small>E-posta</small><strong>info@haydarmuhendislik.com</strong></span>
+        <span class="ok" aria-hidden="true">→</span>
+      </a>
+      <a class="kanal" href="https://www.google.com/maps/dir/?api=1&destination=G%C3%BCne%C5%9Fevler+Mahallesi+Doruk+Sokak+Alt%C4%B1nda%C4%9F+Ankara" target="_blank" rel="noopener">
+        <span class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <span><small>Adres</small><strong>Güneşevler Mahallesi, Doruk Sokak<br>Altındağ / Ankara</strong></span>
+        <span class="ok" aria-hidden="true">→</span>
+      </a>
+      <div class="sosyal">
+        <a href="https://www.instagram.com/haydarmuhendislik" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.linkedin.com/company/haydar-m%C3%BChendislik/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zm1.8 13.1H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg></a>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <!-- ============ İLETİŞİM ============ -->
-    <section class="section contact page-top">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-eyebrow">Bize Ulaşın</p>
-          <h2>İletişim</h2>
-          <p class="section-desc">
-            Projeleriniz için bizimle iletişime geçin, size en kısa sürede
-            dönüş yapalım.
-          </p>
-        </div>
+    <!-- Teklif formu: Web3Forms ile info@ adresine iletilir -->
+    <section class="form-kart" id="form" aria-labelledby="form-baslik">
+      <h2 id="form-baslik">Teklif formu</h2>
+      <p>Sahanızı ve ihtiyacınızı kısaca anlatın; size uygun çözümü ve fiyatı iletelim.</p>
+      <form id="teklifFormu" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="99b1f411-9f1c-4e40-8427-ab6715b53917">
+        <input type="hidden" name="subject" value="Web Sitesi Teklif Formu - Yeni Mesaj">
+        <input type="hidden" name="from_name" value="haydarmuhendislik.com">
+        <!-- Spam botlarını engellemek için görünmez alan -->
+        <input type="checkbox" name="botcheck" class="gizli" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-        <div class="contact-grid">
-          <!-- İletişim bilgileri (placeholder) -->
-          <div class="contact-info">
-            <div class="contact-item">
-              <span class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 5c0-1 1-2 2-2h2l2 5-2 2c1 3 3 5 6 6l2-2 5 2v2c0 1-1 2-2 2-9 0-15-6-15-15z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <div>
-                <h4>Telefon</h4>
-                <p>0507 717 94 44</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <span class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
-                  <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <div>
-                <h4>E-posta</h4>
-                <p>info@haydarmuhendislik.com</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <span class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 22s7-7.5 7-13a7 7 0 10-14 0c0 5.5 7 13 7 13z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.6"/>
-                </svg>
-              </span>
-              <div>
-                <h4>Adres</h4>
-                <p>Güneşevler Mahallesi, Doruk Sokak, Altındağ / Ankara</p>
-              </div>
-            </div>
+        <div class="satir">
+          <div class="alan">
+            <label for="ad">Ad Soyad</label>
+            <input id="ad" name="name" type="text" autocomplete="name" placeholder="Adınız Soyadınız" required>
           </div>
-
-          <!-- İletişim formu: Web3Forms üzerinden doğrudan e-postaya gönderilir -->
-          <form id="contactForm" class="contact-form">
-            <!-- Web3Forms erişim anahtarı -->
-            <input type="hidden" name="access_key" value="99b1f411-9f1c-4e40-8427-ab6715b53917" />
-            <input type="hidden" name="subject" value="Web Sitesi İletişim Formu - Yeni Mesaj" />
-            <!-- Spam botlarını engellemek için görünmez alan -->
-            <input type="checkbox" name="botcheck" class="hidden-field" style="display:none" tabindex="-1" autocomplete="off" />
-
-            <div class="form-row">
-              <label for="name">Ad Soyad</label>
-              <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required />
-            </div>
-            <div class="form-row">
-              <label for="email">E-posta</label>
-              <input type="email" id="email" name="email" placeholder="ornek@eposta.com" required />
-            </div>
-            <div class="form-row">
-              <label for="message">Mesajınız</label>
-              <textarea id="message" name="message" rows="5" placeholder="Projenizden kısaca bahsedin..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary form-submit">Mesaj Gönder</button>
-            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-          </form>
+          <div class="alan">
+            <label for="firma">Firma <span>(isteğe bağlı)</span></label>
+            <input id="firma" name="firma" type="text" autocomplete="organization" placeholder="Firma adı">
+          </div>
         </div>
+        <div class="satir">
+          <div class="alan">
+            <label for="eposta">E-posta</label>
+            <input id="eposta" name="email" type="email" autocomplete="email" placeholder="ornek@eposta.com" required>
+          </div>
+          <div class="alan">
+            <label for="telefon">Telefon <span>(isteğe bağlı)</span></label>
+            <input id="telefon" name="telefon" type="tel" autocomplete="tel" placeholder="05xx xxx xx xx">
+          </div>
+        </div>
+        <div class="alan">
+          <label for="hizmet">İlgilendiğiniz hizmet</label>
+          <select id="hizmet" name="hizmet">
+            <option value="Genel bilgi">Genel bilgi / Diğer</option>
+            <option value="Halihazır harita ve imalat ölçümleri">Halihazır harita ve imalat ölçümleri</option>
+            <option value="Termin ve restorasyon planları">Termin ve restorasyon planları</option>
+            <option value="Orman izin haritası ve aplikasyonları">Orman izin haritası ve aplikasyonları</option>
+            <option value="Maden planlama ve 3B modelleme">Maden planlama ve 3B modelleme</option>
+            <option value="Dron ile hava görüntüleme">Dron ile hava görüntüleme</option>
+            <option value="Web tasarımı ve yazılım">Web tasarımı ve yazılım</option>
+          </select>
+        </div>
+        <div class="alan">
+          <label for="mesaj">Mesajınız</label>
+          <textarea id="mesaj" name="message" rows="5" placeholder="Proje yeri, alan büyüklüğü, istenen teslim tarihi gibi bilgiler..." required></textarea>
+        </div>
+        <label class="onay">
+          <input type="checkbox" id="kvkkOnay" required>
+          <span><button type="button" id="kvkkAc">KVKK Aydınlatma Metni</button>'ni okudum; bilgilerimin teklif talebim için işlenmesini kabul ediyorum.</span>
+        </label>
+        <button type="submit" class="gonder">Mesajı Gönder <span aria-hidden="true">→</span></button>
+        <p class="durum" id="durum" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </div>
 
-        <!-- Konum haritası (Google Maps, API anahtarı gerektirmeyen embed) -->
-        <div class="contact-map">
-          <iframe
-            src="https://www.google.com/maps?q=G%C3%BCne%C5%9Fevler+Mahallesi+Doruk+Sokak+Alt%C4%B1nda%C4%9F+Ankara&output=embed"
-            title="Haydar Mühendislik konum haritası"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen>
-          </iframe>
+  <section class="harita" aria-label="Konum haritası">
+    <div class="harita-ic">
+      <iframe src="https://www.google.com/maps?q=G%C3%BCne%C5%9Fevler+Mahallesi+Doruk+Sokak+Alt%C4%B1nda%C4%9F+Ankara&output=embed" title="Haydar Mühendislik konum haritası" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <a class="yol-tarifi" href="https://www.google.com/maps/dir/?api=1&destination=G%C3%BCne%C5%9Fevler+Mahallesi+Doruk+Sokak+Alt%C4%B1nda%C4%9F+Ankara" target="_blank" rel="noopener">Yol tarifi al <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="alt-bilgi">
+  <div class="ab-ic">
+    <div class="ab-sutunlar">
+      <div class="ab-marka">
+        <a href="index.html" class="logo">HAYDAR<span>MÜHENDİSLİK</span></a>
+        <p>Harita mühendisliği, maden planlama, dron ile hava görüntüleme ve yazılım çözümlerinde sahadan sayısala uçtan uca hizmet.</p>
+        <div class="ab-sosyal">
+          <a href="https://www.linkedin.com/company/haydar-m%C3%BChendislik/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zm1.8 13.1H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg></a>
+          <a href="https://www.instagram.com/haydarmuhendislik" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/905077179444" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.8L0 24l6.3-1.7A11.8 11.8 0 0 0 24 12c0-3.1-1.2-6.1-3.5-8.4z"/></svg></a>
         </div>
       </div>
-    </section>
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="currentYear"></span> Haydar Mühendislik. Tüm hakları saklıdır.</p>
-
-      <!-- Sosyal medya ikonları için placeholder linkler -->
-      <div class="social-links">
-        <a href="https://www.instagram.com/haydarmuhendislik" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
-            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/company/haydar-m%C3%BChendislik/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M7.5 10.5v6M7.5 7.5v.01M12 16.5v-3.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5v3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </a>
+      <nav aria-label="Kurumsal">
+        <h2>Kurumsal</h2>
+        <ul><li><a href="hakkimizda.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>Hakkımızda</a></li><li><a href="sertifikalar.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>Sertifikalarımız</a></li><li><a href="index.html#ekipman"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>Ekipman Parkımız</a></li><li><a href="iletisim.html#kvkk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>KVKK Aydınlatma Metni</a></li><li><a href="iletisim.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>İletişim</a></li></ul>
+      </nav>
+      <nav aria-label="Hizmetlerimiz">
+        <h2>Hizmetlerimiz</h2>
+        <ul><li><a href="hizmetler.html#halihazir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>Halihazır Harita ve İmalat</a></li><li><a href="hizmetler.html#restorasyon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>Termin ve Restorasyon</a></li><li><a href="hizmetler.html#orman"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>Orman İzin Haritası</a></li><li><a href="hizmetler.html#maden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>Maden Planlama ve 3B</a></li><li><a href="hizmetler.html#dron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>Dron ile Hava Görüntüleme</a></li><li><a href="hizmetler.html#yazilim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>Web ve Yazılım</a></li></ul>
+      </nav>
+      <div>
+        <h2>İletişime Geçin</h2>
+        <ul class="ab-iletisim">
+          <li><span class="ab-ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><a href="tel:+905077179444">0507 717 94 44</a></li>
+          <li><span class="ab-ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span><a href="mailto:info@haydarmuhendislik.com">info@haydarmuhendislik.com</a></li>
+          <li><span class="ab-ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span>Güneşevler Mahallesi, Doruk Sokak<br>Altındağ / ANKARA</span></li>
+        </ul>
       </div>
     </div>
-  </footer>
+    <div class="ab-alt">
+      <p>© <span class="ab-yil">2026</span> Haydar Mühendislik | Tüm hakları saklıdır.</p>
+      <a href="#" class="ab-yukari" aria-label="Sayfanın başına dön"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
+    </div>
+  </div>
+</footer>
+<script>
+// Footer: güncel yıl ve başa dön düğmesi
+document.querySelectorAll('.ab-yil').forEach(e => e.textContent = new Date().getFullYear());
+document.querySelector('.ab-yukari').addEventListener('click', e => {
+  e.preventDefault();
+  scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+});
+</script>
 
-  <!-- JS dosyası (göreli yol) -->
-  <script src="script.js"></script>
+<!-- KVKK aydınlatma metni (taslak: yayından önce hukuki kontrol önerilir) -->
+<div class="perde" id="kvkkPerde" role="dialog" aria-modal="true" aria-labelledby="kvkk-baslik">
+  <div class="kvkk">
+    <button class="kapat" type="button" aria-label="Kapat">×</button>
+    <h3 id="kvkk-baslik">KVKK Aydınlatma Metni</h3>
+    <p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında veri sorumlusu sıfatıyla Haydar Mühendislik olarak, iletişim formu aracılığıyla paylaştığınız kişisel verilerinizi aşağıdaki çerçevede işliyoruz.</p>
+    <ul>
+      <li><b>İşlenen veriler:</b> ad soyad, firma adı, e-posta adresi, telefon numarası ve mesaj içeriği.</li>
+      <li><b>Amaç:</b> teklif ve bilgi taleplerinize yanıt vermek, sizinle iletişime geçmek.</li>
+      <li><b>Hukuki sebep:</b> açık rızanız ve bir sözleşmenin kurulması için gerekli olması (KVKK m. 5).</li>
+      <li><b>Aktarım:</b> form iletileri e-posta altyapısı sağlayıcımız (Web3Forms) aracılığıyla şirket e-posta adresimize iletilir; verileriniz bunun dışında üçüncü kişilerle paylaşılmaz.</li>
+      <li><b>Saklama süresi:</b> talebiniz sonuçlandıktan sonra ilgili mevzuatta öngörülen süre boyunca saklanır, ardından silinir.</li>
+    </ul>
+    <p>KVKK m. 11 kapsamındaki haklarınızı kullanmak için <a href="mailto:info@haydarmuhendislik.com" style="color:var(--gold-2)">info@haydarmuhendislik.com</a> adresine başvurabilirsiniz.</p>
+  </div>
+</div>
+
+<a class="wa-sabit" href="https://wa.me/905077179444?text=Merhaba%2C%20web%20siteniz%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener" aria-label="WhatsApp ile yazın">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.8L0 24l6.3-1.7A11.8 11.8 0 0 0 24 12c0-3.1-1.2-6.1-3.5-8.4z"/></svg>
+</a>
+
+<script>
+// ---------- Adresteki ?hizmet= parametresiyle seçimi doldur ----------
+const istenen = new URLSearchParams(location.search).get('hizmet');
+if (istenen) {
+  const sec = document.getElementById('hizmet');
+  const o = [...sec.options].find(o => o.value.toLowerCase().startsWith(istenen.toLowerCase()));
+  if (o) sec.value = o.value;
+}
+
+// ---------- KVKK penceresi ----------
+const perde = document.getElementById('kvkkPerde');
+const kvkkAc = document.getElementById('kvkkAc');
+const kapat = () => { perde.classList.remove('acik'); kvkkAc.focus(); };
+kvkkAc.addEventListener('click', () => { perde.classList.add('acik'); perde.querySelector('.kapat').focus(); });
+perde.addEventListener('click', e => { if (e.target === perde || e.target.closest('.kapat')) kapat(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && perde.classList.contains('acik')) kapat(); });
+if (location.hash === '#kvkk') { perde.classList.add('acik'); perde.querySelector('.kapat').focus(); }
+addEventListener('hashchange', () => { if (location.hash === '#kvkk') kvkkAc.click(); });
+
+// ---------- Form: Web3Forms ile doğrudan e-postaya gönderim ----------
+const form = document.getElementById('teklifFormu');
+const durum = document.getElementById('durum');
+const gonder = form.querySelector('.gonder');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  durum.className = 'durum'; durum.textContent = '';
+
+  if (!form.checkValidity()) {
+    const ilkHata = form.querySelector(':invalid');
+    durum.classList.add('hata');
+    durum.textContent = ilkHata.id === 'kvkkOnay'
+      ? 'Devam etmek için KVKK Aydınlatma Metni\'ni onaylayın.'
+      : 'Lütfen zorunlu alanları doğru doldurun.';
+    ilkHata.focus();
+    return;
+  }
+
+  const veri = new FormData(form);
+  veri.set('subject', 'Teklif Talebi: ' + veri.get('hizmet') + ' - ' + veri.get('name'));
+  const eskiYazi = gonder.innerHTML;
+  gonder.disabled = true; gonder.textContent = 'Gönderiliyor...';
+
+  fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: veri })
+    .then(r => r.json())
+    .then(sonuc => {
+      if (!sonuc.success) throw new Error(sonuc.message || 'Gönderim başarısız oldu.');
+      form.reset();
+      durum.classList.add('basari');
+      durum.textContent = 'Mesajınız gönderildi. En kısa sürede size dönüş yapacağız.';
+    })
+    .catch(() => {
+      durum.classList.add('hata');
+      durum.textContent = 'Mesaj gönderilemedi. Lütfen tekrar deneyin ya da info@haydarmuhendislik.com adresine yazın.';
+    })
+    .finally(() => { gonder.disabled = false; gonder.innerHTML = eskiYazi; });
+});
+</script>
 </body>
 </html>

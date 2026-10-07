@@ -1,138 +1,390 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haydar Mühendislik | Harita, Maden Mühendisliği ve Yazılım Hizmetleri</title>
-  <meta name="description" content="Haydar Mühendislik - Harita ölçümleri, maden planlama ve 3B modelleme, dron çekimi ve yazılım geliştirme alanlarında profesyonel çözümler." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haydar Mühendislik | Harita, Maden Planlama ve Dron Hizmetleri</title>
+<meta name="description" content="Ankara merkezli Haydar Mühendislik: halihazır harita ve imalat ölçümleri, maden planlama ve 3B modelleme, orman izin haritaları, RTK dron ile hava görüntüleme ve yazılım çözümleri.">
+<link rel="canonical" href="https://www.haydarmuhendislik.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0c1626">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Haydar Mühendislik">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Haydar Mühendislik | Harita, Maden Planlama ve Dron Hizmetleri">
+<meta property="og:description" content="Ankara merkezli Haydar Mühendislik: halihazır harita ve imalat ölçümleri, maden planlama ve 3B modelleme, orman izin haritaları, RTK dron ile hava görüntüleme ve yazılım çözümleri.">
+<meta property="og:url" content="https://www.haydarmuhendislik.com/">
+<meta property="og:image" content="https://www.haydarmuhendislik.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Haydar Mühendislik",
+  "url": "https://www.haydarmuhendislik.com/",
+  "image": "https://www.haydarmuhendislik.com/og-image.jpg",
+  "logo": "https://www.haydarmuhendislik.com/favicon.svg",
+  "telephone": "+905077179444",
+  "email": "info@haydarmuhendislik.com",
+  "foundingDate": "2026-06",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Güneşevler Mahallesi, Doruk Sokak",
+    "addressLocality": "Altındağ",
+    "addressRegion": "Ankara",
+    "addressCountry": "TR"
+  },
+  "areaServed": "TR",
+  "sameAs": [
+    "https://www.instagram.com/haydarmuhendislik",
+    "https://www.linkedin.com/company/haydar-m%C3%BChendislik/"
+  ],
+  "description": "Harita mühendisliği, maden planlama ve 3B modelleme, orman izin haritaları, dron ile hava görüntüleme ve yazılım geliştirme hizmetleri."
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-ocak-poster.jpg">
+<style>
+:root{
+  --bg:#0c1626;
+  --gold:#d4a85a;
+  --gold-2:#e6c07a;
+  --text:#f3efe6;
+  --muted:#c4c9d2;
+  --kart:rgba(19,33,58,.72);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
 
-  <!-- Sosyal medya paylaşım kartı (Open Graph / Twitter) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Haydar Mühendislik" />
-  <meta property="og:title" content="Haydar Mühendislik | Harita, Maden Mühendisliği ve Yazılım Hizmetleri" />
-  <meta property="og:description" content="Harita ölçümleri, maden planlama ve 3B modelleme, dron çekimi ve yazılım geliştirme alanlarında profesyonel çözümler." />
-  <meta property="og:url" content="https://www.haydarmuhendislik.com/" />
-  <meta property="og:image" content="https://www.haydarmuhendislik.com/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Haydar Mühendislik | Harita, Maden Mühendisliği ve Yazılım Hizmetleri" />
-  <meta name="twitter:description" content="Harita ölçümleri, maden planlama ve 3B modelleme, dron çekimi ve yazılım geliştirme alanlarında profesyonel çözümler." />
-  <meta name="twitter:image" content="https://www.haydarmuhendislik.com/og-image.jpg" />
+/* ---------- Üst menü ---------- */
+.ust{position:fixed;inset:0 0 auto;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(16px,4vw,56px)}
+.logo{font-family:Fraunces,Georgia,serif;font-size:22px;font-weight:600;letter-spacing:.04em;line-height:1.1}
+.logo span{display:block;font:500 10px/1 Inter,sans-serif;letter-spacing:.32em;color:var(--gold);margin-top:4px}
+.menu{display:flex;align-items:center;gap:34px;font-size:15px;font-weight:500}
+.menu a{opacity:.85;transition:opacity .2s}
+.menu a:hover{opacity:1}
+.menu .teklif{border:1px solid var(--gold);color:var(--gold);padding:8px 18px;border-radius:999px;opacity:1;transition:background .2s,color .2s}
+.menu .teklif:hover{background:var(--gold);color:var(--bg)}
 
-  <!-- Sayfa ikonu (favicon) - basit bir SVG ikon, harici dosya gerektirmez -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%231F4B43'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%23F3EFE6' font-family='Georgia, serif'%3EH%3C/text%3E%3C/svg%3E" />
+/* ---------- Slayt kaydırıcı ---------- */
+.kaydirici{display:flex;height:100svh;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.kaydirici::-webkit-scrollbar{display:none}
+.kaydirici.surukle{scroll-snap-type:none;cursor:grabbing}
+.slayt{position:relative;flex:0 0 100%;height:100%;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden;isolation:isolate;display:flex;align-items:flex-end}
+.slayt>video,.slayt>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;user-select:none;-webkit-user-drag:none}
+.slayt>img{transform:scale(1.08);transition:transform 9s linear}
+.slayt.aktif>img{transform:scale(1)}
+.slayt>img.sag{left:auto;right:-6%;width:80%}
+@media (max-width:820px){.slayt>img.sag{inset:84px 0 auto 0;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}}
+.slayt::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    linear-gradient(180deg,rgba(12,22,38,.55) 0%,rgba(12,22,38,0) 18%),
+    linear-gradient(90deg,rgba(12,22,38,.88) 0%,rgba(12,22,38,.5) 42%,rgba(12,22,38,0) 75%),
+    linear-gradient(0deg,rgba(12,22,38,.92) 0%,rgba(12,22,38,0) 42%)}
 
-  <!-- Stil dosyası (göreli yol) -->
-  <link rel="stylesheet" href="styles.css" />
+.icerik{width:100%;max-width:1440px;margin:0 auto;padding:120px clamp(16px,4vw,56px) 150px}
+.ust-baslik{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin:0 0 16px}
+h1,h2{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.05;margin:0 0 20px;max-width:15ch;overflow-wrap:break-word}
+h1{font-size:clamp(34px,5.8vw,76px)}
+h2{font-size:clamp(32px,5vw,66px)}
+h1 em,h2 em{font-style:normal;color:var(--gold-2)}
+.aciklama{color:var(--muted);font-size:clamp(15px,1.3vw,18px);max-width:540px;margin:0 0 28px}
+.butonlar{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-ana{background:var(--gold);color:var(--bg)}
+.btn-ana:hover{background:var(--gold-2)}
+.btn-cizgi{border:1px solid rgba(243,239,230,.4)}
+.btn-cizgi:hover{border-color:var(--text)}
 
-  <!-- Arama motorları için yapılandırılmış işletme verisi (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Haydar Mühendislik",
-    "image": "https://www.haydarmuhendislik.com/og-image.jpg",
-    "url": "https://www.haydarmuhendislik.com/",
-    "telephone": "+905077179444",
-    "email": "info@haydarmuhendislik.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Güneşevler Mahallesi, Doruk Sokak",
-      "addressLocality": "Altındağ",
-      "addressRegion": "Ankara",
-      "addressCountry": "TR"
-    },
-    "sameAs": ["https://www.instagram.com/haydarmuhendislik"],
-    "description": "Harita mühendisliği, maden planlama ve 3B modelleme, dron çekimi ve yazılım geliştirme hizmetleri sunan mühendislik firması."
-  }
-  </script>
+/* rakam ve özellik kartları */
+.kartlar{display:grid;grid-template-columns:repeat(2,minmax(0,210px));gap:10px;margin:0;padding:0;list-style:none}
+.kartlar li{background:var(--kart);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px 16px;min-width:130px}
+.kartlar strong{display:block;font-family:Fraunces,Georgia,serif;font-size:24px;font-weight:600;line-height:1.15}
+.kartlar small{font:600 13px Inter,sans-serif;color:var(--gold);margin-left:3px}
+.kartlar span{font-size:12.5px;color:var(--muted)}
+.marka{color:var(--muted);font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 6px}
+.adimlar{list-style:none;margin:0;padding:0;max-width:460px;border-top:1px solid rgba(243,239,230,.16)}
+.adimlar li{padding:11px 0;border-bottom:1px solid rgba(243,239,230,.16);font-weight:500}
+.adimlar b{color:var(--gold);font-family:Fraunces,Georgia,serif;margin-right:14px}
+
+/* aktif slaytta yazılar sırayla belirsin */
+.gir{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.aktif .gir{opacity:1;transform:none}
+.aktif .gir:nth-child(2){transition-delay:.1s}
+.aktif .gir:nth-child(3){transition-delay:.2s}
+.aktif .gir:nth-child(4){transition-delay:.3s}
+.aktif .gir:nth-child(5){transition-delay:.4s}
+.aktif .gir:nth-child(6){transition-delay:.5s}
+
+/* ---------- Alt kontrol çubuğu ---------- */
+.kontrol{position:fixed;left:0;right:0;bottom:0;z-index:10;padding:0 clamp(16px,4vw,56px) 28px;display:flex;align-items:flex-end;gap:28px;pointer-events:none}
+.kontrol>*{pointer-events:auto}
+.sayac{font-family:Fraunces,Georgia,serif;font-size:15px;white-space:nowrap;padding-bottom:2px}
+.sayac b{font-size:26px;color:var(--text);font-weight:600}
+.sayac span{color:var(--muted)}
+.bolumler{flex:1;display:flex;gap:10px;margin:0;padding:0;list-style:none}
+.bolumler li{flex:1;min-width:0}
+.bolumler button{width:100%;background:none;border:0;padding:10px 0 0;text-align:left;cursor:pointer;color:var(--muted);font-size:12.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .3s}
+.bolumler button:hover,.bolumler button[aria-current="true"]{color:var(--text)}
+.cubuk{display:block;height:2px;background:rgba(243,239,230,.2);border-radius:2px;overflow:hidden;margin-bottom:9px}
+.cubuk i{display:block;height:100%;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left}
+.oklar{display:flex;gap:10px}
+.ok{width:48px;height:48px;border-radius:50%;border:1px solid rgba(243,239,230,.35);background:rgba(12,22,38,.35);backdrop-filter:blur(6px);cursor:pointer;display:grid;place-items:center;transition:border-color .2s,background .2s}
+.ok:hover{border-color:var(--gold);background:rgba(212,168,90,.15)}
+.ok svg{width:18px;height:18px}
+.ok:focus-visible,.bolumler button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+@media (max-width:820px){
+  .menu a:not(.teklif){display:none}
+  .icerik{padding:110px 16px 110px}
+  .ust-baslik{font-size:11.5px;letter-spacing:.14em}
+  h1{font-size:clamp(30px,8.6vw,44px)}
+  h2{font-size:clamp(28px,8vw,40px)}
+  .slayt::after{background:linear-gradient(0deg,rgba(12,22,38,.96) 8%,rgba(12,22,38,.55) 60%,rgba(12,22,38,.35) 100%)}
+  .kartlar{grid-template-columns:1fr 1fr}
+  .kartlar li{min-width:0}
+  .btn{padding:12px 20px}
+  .oklar,.sayac{display:none}
+  .bolumler button{font-size:0;padding-top:6px}
+  .kontrol{padding-bottom:22px}
+}
+@media (max-height:700px) and (min-width:821px){
+  .aciklama{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .gir,.slayt>img{transition:none}
+  .gir{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
 
-  <!-- ============ HEADER ============ -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <img src="logo-header.png" alt="Haydar Mühendislik" class="logo-image" />
-      </a>
+<header class="ust">
+  <a href="index.html" class="logo">HAYDAR<span>MÜHENDİSLİK</span></a>
+  <nav class="menu" aria-label="Ana menü">
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="#ekipman">Ekipman</a>
+    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="iletisim.html" class="teklif">İletişim</a>
+  </nav>
+</header>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+<main class="kaydirici" id="kaydirici" tabindex="0" aria-roledescription="slayt gösterisi" aria-label="Haydar Mühendislik tanıtım">
 
-      <nav class="main-nav" id="mainNav">
-        <ul>
-          <li><a href="index.html" class="active" aria-current="page">Anasayfa</a></li>
-          <li><a href="hizmetler.html">Hizmetler</a></li>
-          <li><a href="hakkimizda.html">Hakkımızda</a></li>
-          <li><a href="iletisim.html">İletişim</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- ============ HERO / ANASAYFA ============ -->
-    <section class="hero">
-      <!-- Havadan arazi fotoğrafı (Unsplash Lisansı ile ücretsiz kullanım, Matheo JBT) -->
-      <div class="hero-photo" aria-hidden="true"></div>
-
-      <!-- Dekoratif kontur çizgisi animasyonu (harita/topografya teması) -->
-      <div class="hero-bg" aria-hidden="true">
-        <svg viewBox="0 0 1200 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path class="contour c1" d="M-50 120 C 180 60, 320 190, 560 130 S 900 40, 1250 110" />
-          <path class="contour c2" d="M-50 200 C 200 130, 360 260, 610 210 S 940 120, 1250 190" />
-          <path class="contour c3" d="M-50 300 C 220 220, 380 360, 630 300 S 960 210, 1250 280" />
-          <path class="contour c4" d="M-50 480 C 200 380, 350 550, 600 450 S 950 380, 1250 470" />
-          <path class="contour c5" d="M-50 420 C 220 320, 380 480, 620 390 S 960 320, 1250 400" />
-          <path class="contour c6" d="M-50 550 C 180 460, 340 600, 590 520 S 940 460, 1250 540" />
-        </svg>
-      </div>
-
-      <div class="container hero-inner">
-        <p class="hero-eyebrow">Harita Mühendisliği &middot; Maden Planlama &middot; Yazılım</p>
-        <h1>Sahadan sayısala, ölçümden 3B modellemeye bütüncül mühendislik çözümleri.</h1>
-        <p class="hero-subtitle">
-          Haydar Mühendislik olarak; halihazır harita ve imalat ölçümlerinden
-          açık ocak tasarımına, termin ve restorasyon planlarından orman izin
-          süreçlerine kadar madencilik ve harita mühendisliğinin her
-          aşamasında yanınızdayız. Dron teknolojisi ve özel yazılım
-          çözümleriyle süreçlerinizi hızlandırıyoruz.
-        </p>
-        <div class="hero-actions">
-          <a href="hizmetler.html" class="btn btn-primary">Hizmetlerimizi İnceleyin</a>
-          <a href="iletisim.html" class="btn btn-outline">Bize Ulaşın</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="currentYear"></span> Haydar Mühendislik. Tüm hakları saklıdır.</p>
-
-      <!-- Sosyal medya ikonları için placeholder linkler -->
-      <div class="social-links">
-        <a href="https://www.instagram.com/haydarmuhendislik" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/>
-            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/company/haydar-m%C3%BChendislik/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M7.5 10.5v6M7.5 7.5v.01M12 16.5v-3.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5v3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </a>
+  <!-- 1: Ana mesaj -->
+  <section class="slayt" data-ad="Sahadan sayısala" aria-roledescription="slayt">
+    <video autoplay muted loop playsinline preload="auto" poster="assets/hero-ocak-poster.jpg" aria-hidden="true">
+      <source src="assets/hero-ocak.webm" type="video/webm">
+      <source src="assets/hero-ocak.mp4" type="video/mp4">
+    </video>
+    <div class="icerik">
+      <p class="ust-baslik gir">Harita · Maden Planlama · Dron · Yazılım</p>
+      <h1 class="gir">Sahadan sayısala, <em>santimetre</em> hassasiyetinde.</h1>
+      <p class="aciklama gir">Halihazır haritadan açık ocak tasarımına, orman izinlerinden 3B modellemeye kadar; madencilik ve harita mühendisliğinin her aşamasında yanınızdayız.</p>
+      <div class="butonlar gir">
+        <a href="iletisim.html#form" class="btn btn-ana">Teklif Alın <span aria-hidden="true">→</span></a>
+        <a href="hizmetler.html" class="btn btn-cizgi">Hizmetlerimiz</a>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- JS dosyası (göreli yol) -->
-  <script src="script.js"></script>
+  <!-- 2: Nasıl çalışıyoruz -->
+  <section class="slayt" data-ad="Nasıl çalışıyoruz" data-bir-kez aria-roledescription="slayt">
+    <video muted playsinline preload="metadata" poster="assets/kontur-poster.jpg" aria-hidden="true">
+      <source src="assets/kontur.webm" type="video/webm">
+      <source src="assets/kontur.mp4" type="video/mp4">
+    </video>
+    <div class="icerik">
+      <p class="ust-baslik gir">Nasıl çalışıyoruz</p>
+      <h2 class="gir">Arazi, ölçüldüğü an <em>veriye</em> dönüşür.</h2>
+      <p class="aciklama gir">Dron ve GNSS ile topladığımız ham veriyi eş yükselti eğrilerine, yüzey modellerine ve CAD çizimlerine dönüştürüyoruz.</p>
+      <ol class="adimlar gir">
+        <li><b>01</b>Saha ölçümü — Matrice 4E ve V600L</li>
+        <li><b>02</b>Veri işleme — ortofoto, DEM, nokta bulutu</li>
+        <li><b>03</b>Teslim — harita, hacim raporu, CAD</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 3: Dron -->
+  <section class="slayt" data-ad="Dron ile haritalama" data-bir-kez aria-roledescription="slayt">
+    <video muted playsinline preload="metadata" poster="assets/dron-kalkis-poster.jpg" aria-hidden="true">
+      <source src="assets/dron-kalkis.webm" type="video/webm">
+      <source src="assets/dron-kalkis.mp4" type="video/mp4">
+    </video>
+    <div class="icerik">
+      <p class="ust-baslik gir">Dron ile Hava Görüntüleme</p>
+      <h2 class="gir">Günlerce sürecek ölçüm, <em>tek uçuşta.</em></h2>
+      <p class="aciklama gir">RTK destekli dronlarımızla hektarlarca alanı kontrol noktası kurmadan haritalıyor; ortofoto, yüzey modeli ve hacim hesaplarını hızla teslim ediyoruz.</p>
+      <div class="butonlar gir"><a href="hizmetler.html#dron" class="btn btn-cizgi">Dron hizmetlerimiz <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
+  <!-- 4: Maden planlama -->
+  <section class="slayt" data-ad="Maden planlama ve 3B" aria-roledescription="slayt">
+    <video muted loop playsinline preload="metadata" poster="assets/nokta-bulutu-poster.jpg" aria-hidden="true">
+      <source src="assets/nokta-bulutu.webm" type="video/webm">
+      <source src="assets/nokta-bulutu.mp4" type="video/mp4">
+    </video>
+    <div class="icerik">
+      <p class="ust-baslik gir">Maden Planlama ve 3B Modelleme</p>
+      <h2 class="gir">Ocağınızın her basamağı, <em>santimetre</em> ölçeğinde.</h2>
+      <p class="aciklama gir">Açık ocak tasarımı, sondaj modellemesi, dekapaj, kazı-dolgu ve rezerv hesapları. Sahanızın 3B modelini çıkarıp planlamanızı sayısallaştırıyoruz.</p>
+      <div class="butonlar gir"><a href="hizmetler.html#maden" class="btn btn-cizgi">Maden hizmetlerimiz <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
+  <!-- 5: Matrice 4E -->
+  <section class="slayt" id="ekipman" data-ad="DJI Matrice 4E" aria-roledescription="slayt">
+    <img class="sag" src="assets/matrice-4e.jpg" alt="" loading="lazy">
+    <div class="icerik">
+      <p class="ust-baslik gir">Ekipman Parkımız</p>
+      <p class="marka gir">DJI Enterprise</p>
+      <h2 class="gir">Matrice <em>4E</em></h2>
+      <p class="aciklama gir">Haritalama ve fotogrametri dronu. Ortofoto, yüzey modeli, nokta bulutu ve 3B modelleri tek uçuşta üretiyoruz.</p>
+      <ul class="kartlar gir">
+        <li><strong>1 cm<small>+1 ppm</small></strong><span>RTK yatay doğruluk</span></li>
+        <li><strong>49<small>dk</small></strong><span>Uçuş süresi</span></li>
+        <li><strong>20<small>MP</small></strong><span>4/3" mekanik deklanşör</span></li>
+        <li><strong>YKN'siz</strong><span>Kontrol noktasız harita</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6: V600L -->
+  <section class="slayt" data-ad="Hi-Target V600L" aria-roledescription="slayt">
+    <img src="assets/v600l.jpg" alt="" loading="lazy" style="object-position:70% 50%">
+    <div class="icerik">
+      <p class="ust-baslik gir">Ekipman Parkımız</p>
+      <p class="marka gir">Hi-Target</p>
+      <h2 class="gir">V600L <em>GNSS</em></h2>
+      <p class="aciklama gir">Lazerli GNSS RTK alıcısı. Ulaşılması zor noktaları lazerle, dokunmadan ve milimetre düzeyinde doğrulukla ölçüyoruz.</p>
+      <ul class="kartlar gir">
+        <li><strong>8<small>mm +1 ppm</small></strong><span>RTK yatay doğruluk</span></li>
+        <li><strong>1408</strong><span>GNSS kanalı</span></li>
+        <li><strong>2<small>cm</small></strong><span>10 m içinde lazer ölçüm</span></li>
+        <li><strong>IMU</strong><span>Kalibrasyonsuz eğik ölçüm</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<div class="kontrol">
+  <div class="sayac" aria-live="polite"><b id="no">01</b> <span>/ <span id="toplam">06</span></span></div>
+  <ol class="bolumler" id="bolumler"></ol>
+  <div class="oklar">
+    <button class="ok" id="geri" aria-label="Önceki slayt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="ok" id="ileri" aria-label="Sonraki slayt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+  </div>
+</div>
+
+<script>
+(() => {
+  const kay = document.getElementById('kaydirici');
+  const slaytlar = [...kay.querySelectorAll('.slayt')];
+  const liste = document.getElementById('bolumler');
+  const azHareket = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const RESIM_SURE = 8000;   // resimli slaytlarda bekleme (ms)
+  let aktif = -1, baslangic = 0, durdu = false;
+
+  // Alt çubuktaki bölüm düğmeleri
+  const cubuklar = slaytlar.map((s, i) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<button type="button"><span class="cubuk"><i></i></span>${s.dataset.ad}</button>`;
+    li.querySelector('button').setAttribute('aria-label', `${i + 1}. slayt: ${s.dataset.ad}`);
+    li.querySelector('button').onclick = () => git(i);
+    liste.appendChild(li);
+    return li.querySelector('i');
+  });
+  document.getElementById('toplam').textContent = String(slaytlar.length).padStart(2, '0');
+
+  const git = i => {
+    i = (i + slaytlar.length) % slaytlar.length;
+    kay.scrollTo({ left: i * kay.clientWidth, behavior: azHareket ? 'auto' : 'smooth' });
+  };
+  document.getElementById('ileri').onclick = () => git(aktif + 1);
+  document.getElementById('geri').onclick = () => git(aktif - 1);
+  addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') git(aktif + 1);
+    if (e.key === 'ArrowLeft') git(aktif - 1);
+  });
+
+  // Slayt değişince: yazıları aç, videoyu oynat/durdur, sayacı güncelle
+  const etkinlestir = i => {
+    if (i === aktif) return;
+    aktif = i; baslangic = performance.now();
+    slaytlar.forEach((s, j) => {
+      s.classList.toggle('aktif', j === i);
+      const v = s.querySelector('video');
+      if (!v) return;
+      if (j === i) {
+        if (s.hasAttribute('data-bir-kez')) v.currentTime = 0;
+        v.play().catch(() => v.addEventListener('canplay', () => s.classList.contains('aktif') && v.play().catch(() => {}), { once: true }));
+      } else v.pause();
+      if (j === i + 1) v.preload = 'auto';   // sıradakini önceden yükle
+    });
+    const sonraki = slaytlar[i + 1]?.querySelector('img');
+    if (sonraki) sonraki.loading = 'eager';
+    document.getElementById('no').textContent = String(i + 1).padStart(2, '0');
+    liste.querySelectorAll('button').forEach((b, j) => b.setAttribute('aria-current', j === i));
+    cubuklar.forEach((c, j) => c.style.transform = `scaleX(${j < i ? 1 : 0})`);
+  };
+
+  let zamanlayici;
+  kay.addEventListener('scroll', () => {
+    clearTimeout(zamanlayici);
+    zamanlayici = setTimeout(() => etkinlestir(Math.round(kay.scrollLeft / kay.clientWidth)), 80);
+  }, { passive: true });
+  addEventListener('resize', () => kay.scrollTo({ left: aktif * kay.clientWidth }));
+
+  // İlerleme çubuğu + otomatik geçiş
+  const dongu = () => {
+    const s = slaytlar[aktif], v = s?.querySelector('video');
+    let oran;
+    if (v && v.duration) oran = s.hasAttribute('data-bir-kez') || !v.loop ? v.currentTime / v.duration : (performance.now() - baslangic) / (v.duration * 1000);
+    else oran = (performance.now() - baslangic) / RESIM_SURE;
+    if (cubuklar[aktif]) cubuklar[aktif].style.transform = `scaleX(${Math.min(oran, 1)})`;
+    if (!durdu && !azHareket && oran >= 1) {
+      if (v && s.hasAttribute('data-bir-kez')) { if (v.ended) git(aktif + 1); }
+      else git(aktif + 1);
+    }
+    requestAnimationFrame(dongu);
+  };
+
+  // Fareyle sürükleyerek kaydırma (dokunmatikte tarayıcı zaten yapıyor)
+  let surX = null, surSol = 0;
+  kay.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'mouse' || e.target.closest('a,button')) return;
+    surX = e.clientX; surSol = kay.scrollLeft; kay.classList.add('surukle');
+  });
+  addEventListener('pointermove', e => { if (surX !== null) kay.scrollLeft = surSol - (e.clientX - surX); });
+  addEventListener('pointerup', e => {
+    if (surX === null) return;
+    const fark = e.clientX - surX; surX = null; kay.classList.remove('surukle');
+    git(Math.abs(fark) > 60 ? aktif + (fark < 0 ? 1 : -1) : aktif);
+  });
+
+  // Sekme gizliyken otomatik geçiş dursun
+  document.addEventListener('visibilitychange', () => durdu = document.hidden);
+
+  // Adres #ekipman gibi bir slaytı gösteriyorsa oraya git
+  const hashGit = anim => {
+    const i = slaytlar.findIndex(s => s.id && '#' + s.id === location.hash);
+    if (i >= 0) anim ? git(i) : (kay.scrollLeft = i * kay.clientWidth);
+    return i;
+  };
+  addEventListener('hashchange', () => hashGit(true));
+  const ilk = hashGit(false);
+  etkinlestir(ilk > 0 ? ilk : 0);
+  requestAnimationFrame(dongu);
+})();
+</script>
 </body>
 </html>
